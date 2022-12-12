@@ -46,3 +46,6 @@ target_link_libraries( # Specifies the target library.
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})
+
+# XXX ugly
+include_directories(../../../../ffmpeg/dist/arm64-v8a/include/)

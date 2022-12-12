@@ -25,6 +25,12 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['ffmpeg/dist/arm64-v8a/lib']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
