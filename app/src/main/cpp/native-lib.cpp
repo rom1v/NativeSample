@@ -1,7 +1,9 @@
 #include <jni.h>
 #include <string>
 
+extern "C" {
 #include <libavcodec/avcodec.h>
+}
 
 // avoids "Incorrect return type JNICALL, which should have been jstring." with NDK 25 :/
 #define JNICALL
