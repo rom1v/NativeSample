@@ -1,5 +1,7 @@
 #include <jni.h>
 #include <string>
+#include <cstdio>
+#include <cassert>
 
 extern "C" {
 #include <libavcodec/avcodec.h>
@@ -13,7 +15,9 @@ Java_com_rom1v_nativesample_MainActivity_stringFromJNI(
         JNIEnv* env,
         jobject /* this */) {
     unsigned v = avcodec_version();
-    printf("libavcodec: %u.%u.%u", AV_VERSION_MAJOR(v), AV_VERSION_MINOR(v), AV_VERSION_MICRO(v));
     std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
+    char *str;
+    int r = asprintf(&str, "libavcodec: %u.%u.%u", AV_VERSION_MAJOR(v), AV_VERSION_MINOR(v), AV_VERSION_MICRO(v));
+    assert(r != -1);
+    return env->NewStringUTF(str);
 }
