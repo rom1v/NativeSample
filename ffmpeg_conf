@@ -4,6 +4,7 @@
 #   mkdir build
 #   cd build
 #   . ../../ffmpeg_conf
+#   make -j8
 #   cd ../..
 #   mkdir -p app/src/main/jniLibs/arm64-v8a
 #   cp ffmpeg/dist/arm64-v8a/lib/*.so app/src/main/jniLibs/arm64-v8a/
